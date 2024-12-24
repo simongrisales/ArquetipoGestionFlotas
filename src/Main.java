@@ -7,25 +7,21 @@ import views.VehiculoView;
 
 public class Main {
     public static void main(String[] args) {
-        // Crear instancia de vehiculo y conductor
-        Vehiculo vehiculo1 = new Vehiculo("V001", "Furgoneta", "Ford", "Zona Norte", 65.0, "Activo");
-        Conductor conductor1 = new Conductor("1", "Juan Pérez", "ABC123", 30, "Activo");
 
-        // Crear vistas y controladores
+        Vehiculo vehiculo1 = new Vehiculo("MNV-218", "2008", "Renault", "Poblado", 180.0, "Activo");
+        Conductor conductor1 = new Conductor("1234567890", "Simón Grisales", "B1", 17, "Activo");
+
         VehiculoView vehiculoView = new VehiculoView();
         ConductorView conductorView = new ConductorView();
 
         VehiculoController vehiculoController = new VehiculoController(vehiculo1, vehiculoView);
         ConductorController conductorController = new ConductorController(conductor1, conductorView);
 
-        // Mostrar información de vehículo y conductor
         vehiculoController.mostrarVehiculo();
         conductorController.mostrarConductor();
     }
 
-    // **Principio SOLID:**
-    // 5. **Interface Segregation Principle (ISP)**:
-    // Aunque no estamos usando interfaces explícitas en este ejemplo, si más adelante se agregan interfaces para definir comportamientos
-    // (como una interfaz para el controlador o la vista), estas deben ser específicas para evitar que las clases implementen métodos
-    // que no necesitan, asegurando una mayor flexibilidad y menor acoplamiento.
+    /* Principio I (Segregación de Interfaces):
+   Aunque no se utilizan interfaces explícitas en este ejemplo, si en el futuro se agregan, estas deben ser específicas
+   para evitar que las clases implementen métodos innecesarios, promoviendo flexibilidad y menor acoplamiento.*/
 }
